@@ -1,7 +1,7 @@
 from colorama import Fore
 
 from data import mongo_setup
-from main_host import for_host  
+import main_host as host
 from main_guest import for_guest  
 
 def main():
@@ -23,10 +23,13 @@ def main():
       if choice.upper() == 'B':
         for_guest()
       elif choice.upper() == 'O':
-        for_host()
+        host.for_host()
       else:
-        error_msg(' Wrong Input, Please Select The Correct One ')
+        host.error_msg(' Wrong Input, Please Select The Correct One ')
   except KeyboardInterrupt:
+    print('''
+    ********** BYE **********
+    ''')
     return
 
 

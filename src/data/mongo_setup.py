@@ -1,5 +1,7 @@
 from mongoengine import connect
-import pprint
+import os, pprint
+
+from keys import host 
 # import pymongo
 # client = pymongo.MongoClient("mongodb://self:nitesh123@cluster0-shard-00-00.63hur.mongodb.net:27017,cluster0-shard-00-01.63hur.mongodb.net:27017,cluster0-shard-00-02.63hur.mongodb.net:27017/sample_mflix?ssl=true&replicaSet=atlas-s2h4ty-shard-0&authSource=admin&retryWrites=true&w=majority")
 
@@ -18,5 +20,5 @@ import pprint
 
 def global_init():
   # client = mongoengine.register_connection(alias=alias_core, name=db, **data)
-  client = connect(host = "mongodb://self:nitesh123@cluster0-shard-00-00.63hur.mongodb.net:27017,cluster0-shard-00-01.63hur.mongodb.net:27017,cluster0-shard-00-02.63hur.mongodb.net:27017/Bird_Motel?ssl=true&replicaSet=atlas-s2h4ty-shard-0&authSource=admin&retryWrites=true&w=majority")
+  client = connect(host = host)
 

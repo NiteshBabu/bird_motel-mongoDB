@@ -74,6 +74,9 @@ def create_account():
 
 
 def login():
+  if state.active_account:
+    error_msg("You are already logged in")
+    return
   print('\n       ********** Login **********   \n')
   email = input('Please Enter Your Email.... ')
   user = services.find_account_by_email(email)
